@@ -1,13 +1,16 @@
 
 # source=["ねずこ","たんじろう","きょうじゅろう","ぎゆう","げんや","かなお","ぜんいつ",]
-import csv
-with open('source.csv','r')as f:
-    reader = f.read()
+def read_csv():
+  import csv
+  with open('source.csv','r')as f:
+      reader = f.read()
+      return reader
     
 
 def search():
     word = input("鬼滅の登場人物の名前を入力してください>>")
-    if word in reader:
+    kime = read_csv()
+    if word in kime:
           print(f"{word}が見つかりました")
     else:
           print(f"{word}が見つかりませんでした")
